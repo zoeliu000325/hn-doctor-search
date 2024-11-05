@@ -37,7 +37,7 @@ def fetch_data(search_text_values):
         'facet.limit': '600',
         'fl': 'listing_idx,PRV_ID,PRV_ID_TYPE,PRV_FULL_NAME,score,SPECIALTY,PRV_TYPE,medical_plan_count,state,location,PRODUCT_NAME,product_code,street_1,street_2,suite,city,state,zip,county,PRODUCT_START_DATE,IS_HMO,ORIG_PRV_TYPE,pcp_spec_flag,accept_new_pat_flag,telemedicine_capable,telemedicine_indicator,onsite_indicator,ENROLLMENTID,limit_by_age_min,limit_by_age_max,PHONE_NUM,phy_degree,phy_gender,MEDICAL_GROUP,medicaid_ffs_flag,provider_ind,accreditation,future_eff_date,future_exp_date,effDateCount,expDateCount',
         'group.format': 'grouped',
-        'group.limit': '30',
+        'group.limit': '1000',
         'group.sort': 'score asc,product_code asc',
         'group': 'true',
         'group.field': 'PRV_ID_TYPE',
