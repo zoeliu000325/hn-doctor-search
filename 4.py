@@ -94,6 +94,20 @@ def search_doc(search_text_values):
 # Streamlit UI
 st.title("Doctor Search")
 
+# hide github link
+st.markdown(
+    """
+    <style>
+    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+    .viewerBadge_text__1JaDK {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Input text box and button
 search_text = st.text_input("Please input doctor's name:")
 if st.button("Search"):
