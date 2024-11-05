@@ -86,8 +86,8 @@ def search_doc(search_text_values):
                 addresses_medical_groups_tel.add(tmp)
             
             for i in addresses_medical_groups_tel:
-                st.write(' - ' + i[0])
                 st.write(' - ' + i[1])
+                st.write(' - ' + i[0])
                 st.write(' - ' + i[2])
                 st.write('---------------')
 
