@@ -77,17 +77,19 @@ def search_doc(search_text_values):
             doctor_name = group['doclist']['docs'][0]['PRV_FULL_NAME']
             st.write(f"**Doctor: {doctor_name}**")
 
-            addresses = set(doc['street_1'] + ', ' + doc['county'] + ', ' + doc['state'] + ' ' + doc['zip'] for doc in group['doclist']['docs'])
-            medical_groups = set(doc['MEDICAL_GROUP'] for doc in group['doclist']['docs'])
-            
-            st.write("**Addresses:**")
-            for address in addresses:
-                st.write(f" - {address}")
+            addresses_medical_groups_tel = set()
 
-            st.write("**Medical Groups:**")
-            for group in medical_groups:
-                st.write(f" - {group}")
-            st.write("---")
+            for doc in group['doclist']['docs']:
+                addressess = doc['street_1'] + ', ' + doc['county'] + ', ' + doc['state'] + ' ' + doc['zip']
+                medical_group = doc['MEDICAL_GROUP']
+                tmp = (addressess, medical_group, doc['PHONE_NUM'])
+                addresses_medical_groups_tel.add(tmp)
+            
+            for i in addresses_medical_groups_tel:
+                st.write(' - ' + i[0])
+                st.write(' - ' + i[1])
+                st.write(' - ' + i[2])
+                st.write('---------------')
 
 # Streamlit UI
 st.title("Doctor Search")
